@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="charcoal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korada Sai Ganesh | Computer Science Engineering Portfolio</title>
+  <meta name="description" content="Academic & Engineering Portfolio of Korada Sai Ganesh - B.Tech CSE student at Lendi Institute. Projects in AI Proctoring, Distributed Systems, and High-Concurrency Applications.">
+  <meta name="keywords" content="Korada Sai Ganesh, Portfolio, Computer Science, Lendi Institute, AI Proctoring, HireTrue, EduQueue, Python, Java, Systems">
+  <meta name="author" content="Korada Sai Ganesh">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><text x='50%' y='55%' font-family='monospace' font-weight='700' font-size='38' fill='%2338bdf8' text-anchor='middle' dominant-baseline='middle'>&lt;/&gt;</text></svg>">
+
+  <!-- Professional Google Fonts: Inter & Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Subtle Professional Grid Overlay -->
+  <div class="tech-grid-bg"></div>
+
+  <!-- Subtle Cursor Spotlight Glow -->
+  <div class="mouse-spotlight" id="mouseSpotlight"></div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <!-- Clean Anonymous Monogram Logo (No Name Displayed On Left Side) -->
+      <a href="#hero" class="nav-logo" id="navLogo">
+        <span class="logo-box">&lt;/&gt;</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Professional Palette Switcher -->
+        <div class="theme-switcher" id="themeSwitcher" title="Change Theme Palette">
+          <button class="theme-btn" id="themeBtn" aria-label="Toggle Theme Palette">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+            <span class="theme-label">Classic Navy</span>
+          </button>
+          <div class="theme-dropdown" id="themeDropdown">
+            <button class="theme-opt active" data-theme="navy">
+              <span class="color-dot navy-dot"></span> Classic Navy
+            </button>
+            <button class="theme-opt" data-theme="charcoal">
+              <span class="color-dot charcoal-dot"></span> Deep Charcoal
+            </button>
+            <button class="theme-opt" data-theme="slate">
+              <span class="color-dot slate-dot"></span> Clean Slate
+            </button>
+          </div>
+        </div>
+
+        <!-- Resume Modal Trigger -->
+        <button class="btn btn-outline btn-sm" id="openResumeBtn">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span class="drawer-title">&lt;/&gt; Navigation</span>
+      <button class="drawer-close" id="drawerClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="drawer-links">
+      <a href="#about" class="drawer-link"><i class="fa-solid fa-user"></i> About Me</a>
+      <a href="#projects" class="drawer-link"><i class="fa-solid fa-folder-open"></i> Projects</a>
+      <a href="#skills" class="drawer-link"><i class="fa-solid fa-code"></i> Technical Skills</a>
+      <a href="#certifications" class="drawer-link"><i class="fa-solid fa-award"></i> Certifications</a>
+      <a href="#education" class="drawer-link"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+      <a href="#contact" class="drawer-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn btn-primary w-100" id="drawerResumeBtn">
+        <i class="fa-solid fa-file-pdf"></i> View & Print Resume
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="hero">
+      <canvas id="particleCanvas" class="hero-canvas"></canvas>
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <!-- Main Title -->
+          <h1 class="hero-title fade-in-up">
+            Hi, I'm <span class="gradient-text hero-name">Korada Sai Ganesh</span>
+          </h1>
+
+          <!-- Dynamic Focus -->
+          <div class="hero-typed-wrapper fade-in-up delay-1">
+            <span class="typed-prefix">Focus:</span>
+            <div class="focus-slider-wrapper">
+              <span class="focus-slider-text" id="typedRole">Computer Science Engineering</span>
+            </div>
+          </div>
+
+          <!-- Academic & Professional Summary -->
+          <p class="hero-description fade-in-up delay-3">
+            Computer Science Engineering student at <strong>Lendi Institute of Engineering and Technology</strong> (CGPA: <strong>9.2</strong>). 
+            Focused on building high-reliability software, real-time AI proctoring pipelines, multi-tenant academic platforms, and concurrent systems.
+          </p>
+
+          <!-- Core Metrics -->
+          <div class="hero-stats-row fade-in-up delay-4">
+            <div class="hero-stat-card">
+              <span class="stat-number">9.2</span>
+              <span class="stat-label">B.Tech CGPA</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-card">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Virtual Internships</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-card">
+              <span class="stat-number">3</span>
+              <span class="stat-label">Core Projects</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat-card">
+              <span class="stat-number">96.4%</span>
+              <span class="stat-label">Intermediate</span>
+            </div>
+          </div>
+
+          <!-- Hero Buttons -->
+          <div class="hero-cta-group fade-in-up delay-5">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <button class="btn btn-outline" id="heroResumeBtn" title="View Full Resume Sheet">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Official Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Me</span>
+              <i class="fa-regular fa-paper-plane"></i>
+            </a>
+          </div>
+
+          <!-- Contact / Social Pills -->
+          <div class="hero-socials fade-in-up delay-6">
+            <a href="https://linkedin.com/in/sai-ganesh-b73193356" target="_blank" rel="noopener noreferrer" class="social-pill" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:saiganesh.korada44@gmail.com" class="social-pill" title="Email Address">
+              <i class="fa-solid fa-envelope"></i>
+              <span>saiganesh.korada44@gmail.com</span>
+            </a>
+            <a href="tel:9441912178" class="social-pill" title="Phone">
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 9441912178</span>
+            </a>
+            <span class="location-pill">
+              <i class="fa-solid fa-location-dot"></i> Visakhapatnam, India
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Hero Visual: Clean Authentic Developer Terminal (Replaces AI Avatar) -->
+        <div class="hero-visual fade-in-up delay-2">
+          <div class="terminal-card" id="heroTerminal">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="terminal-title"><i class="fa-solid fa-terminal"></i> saiganesh@engineer: ~</span>
+              <span class="terminal-badge">bash 5.2</span>
+            </div>
+            <div class="terminal-body">
+              <div class="t-line">
+                <span class="t-prompt">$</span> <span class="t-cmd">whoami</span>
+              </div>
+              <div class="t-output">
+                Korada Sai Ganesh &mdash; Computer Science Engineering Student
+              </div>
+
+              <div class="t-line">
+                <span class="t-prompt">$</span> <span class="t-cmd">cat academic_profile.json</span>
+              </div>
+              <div class="t-output t-code">
+{
+  <span class="t-key">"degree"</span>: <span class="t-str">"B.Tech in Computer Science"</span>,
+  <span class="t-key">"institution"</span>: <span class="t-str">"Lendi Institute of Eng & Tech"</span>,
+  <span class="t-key">"cgpa"</span>: <span class="t-num">9.2</span>,
+  <span class="t-key">"intermediate"</span>: <span class="t-str">"96.4% (Narayana College)"</span>,
+  <span class="t-key">"cbse_10th"</span>: <span class="t-str">"93.4% (Narayana School)"</span>
+}
+              </div>
+
+              <div class="t-line">
+                <span class="t-prompt">$</span> <span class="t-cmd">ls core_competencies/</span>
+              </div>
+              <div class="t-output">
+                <span class="t-tag">Python</span>
+                <span class="t-tag">Java</span>
+                <span class="t-tag">C/C++</span>
+                <span class="t-tag">JavaScript</span>
+                <span class="t-tag">SQL</span>
+                <span class="t-tag">MongoDB</span>
+                <span class="t-tag">Git</span>
+              </div>
+
+              <div class="t-line">
+                <span class="t-prompt">$</span> <span class="t-cmd">./check_internships.sh</span>
+              </div>
+              <div class="t-output t-success">
+                <i class="fa-solid fa-check"></i> Palo Alto Cybersecurity (10w) <br>
+                <i class="fa-solid fa-check"></i> AWS Academy Gen-AI (10w) <br>
+                <i class="fa-solid fa-check"></i> Google Android Developer (10w) <br>
+                <i class="fa-solid fa-check"></i> Wadhwani Employability (10w)
+              </div>
+
+              <div class="t-line">
+                <span class="t-prompt">$</span> <span class="t-cmd t-cursor">status --availability</span>
+              </div>
+              <div class="t-output t-info">
+                &gt; Ready for Technical Internships & Lab Evaluation
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About section">
+        <span class="mouse-icon"><span class="wheel"></span></span>
+        <span class="scroll-text">Scroll</span>
+      </a>
+    </section>
+
+
+    <!-- ==================== ABOUT & HIGHLIGHTS ==================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-user-graduate"></i> Academic Profile</span>
+          <h2 class="section-title">Background & <span class="gradient-text">Core Competencies</span></h2>
+          <p class="section-subtitle">
+            A dedicated Computer Science Engineering student passionate about programming, problem-solving, and building practical software.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column: Biography Card -->
+          <div class="about-bio-card card-panel">
+            <div class="bio-header">
+              <div class="bio-icon-badge">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h3 class="bio-title">Korada Sai Ganesh</h3>
+                <span class="bio-sub">B.Tech Computer Science Engineering &bull; Lendi IET (2024&ndash;2028)</span>
+              </div>
+            </div>
+
+            <p class="bio-text">
+              Motivated and enthusiastic Computer Science Engineering student with a strong interest in programming, 
+              problem-solving, and emerging technologies. Eager to learn new technologies and contribute effectively to software development projects.
+            </p>
+
+            <p class="bio-text">
+              My hands-on coursework and project work encompass full-stack development, database architecture (SQL and MongoDB), 
+              multithreaded program execution, and computer vision pipelines in Python. I believe in writing well-structured, 
+              testable code and understanding the underlying operating system and algorithmic fundamentals.
+            </p>
+
+            <!-- Language Proficiency -->
+            <div class="languages-box">
+              <h4 class="lang-title"><i class="fa-solid fa-language"></i> Communication Languages</h4>
+              <div class="lang-items">
+                <div class="lang-pill">
+                  <span class="lang-name">English</span>
+                  <span class="lang-level">Professional & Technical</span>
+                </div>
+                <div class="lang-pill">
+                  <span class="lang-name">Telugu</span>
+                  <span class="lang-level">Native & Fluent</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="bio-actions">
+              <a href="mailto:saiganesh.korada44@gmail.com" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-envelope"></i> Send Email
+              </a>
+              <button class="btn btn-sm btn-outline copy-phone-btn" data-phone="9441912178">
+                <i class="fa-solid fa-phone"></i> +91 9441912178
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column: 4 Technical Domains -->
+          <div class="about-pillars">
+            <div class="pillar-card card-panel">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div class="pillar-content">
+                <h4 class="pillar-heading">AI & Computer Vision</h4>
+                <p class="pillar-desc">
+                  Building automated integrity pipelines with continuous presence monitoring, edge intrusion detection, and 3D facial landmark mesh orientation in video streams.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-card card-panel">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <div class="pillar-content">
+                <h4 class="pillar-heading">Distributed Web Platforms</h4>
+                <p class="pillar-desc">
+                  Architecting multi-tenant institutional administrative pipelines with role-based access control, CSV batch ingestion, and real-time SGPA/CGPA computation.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-card card-panel">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <div class="pillar-content">
+                <h4 class="pillar-heading">Multithreading & Concurrency</h4>
+                <p class="pillar-desc">
+                  Implementing thread-safe engines, real-time countdown timers isolated from UI loops, automated submission triggers, and rigorous time constraints.
+                </p>
+              </div>
+            </div>
+
+            <div class="pillar-card card-panel">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="pillar-content">
+                <h4 class="pillar-heading">Industry Virtual Internships</h4>
+                <p class="pillar-desc">
+                  Completed four 10-week virtual internships with Palo Alto Networks (Cybersecurity), AWS Academy (Gen-AI), Google for Developers (Android), and Wadhwani Foundation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== FEATURED PROJECTS ==================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-code-fork"></i> Technical Projects</span>
+          <h2 class="section-title">Software Projects & <span class="gradient-text">Engineering Implementations</span></h2>
+          <p class="section-subtitle">
+            Core projects developed to solve concrete engineering challenges in remote assessment, result distribution, and concurrent testing.
+          </p>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects (3)</button>
+          <button class="filter-btn" data-filter="ai">AI & Computer Vision</button>
+          <button class="filter-btn" data-filter="web">Web & Multi-Tenant</button>
+          <button class="filter-btn" data-filter="systems">Systems & Multithreading</button>
+        </div>
+
+        <!-- Projects Grid: Authentic Code/Architecture Previews (No AI Images) -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- PROJECT 1: HIRETRUE -->
+          <div class="project-card card-panel" data-category="ai" data-project="hiretrue">
+            <!-- Project Screenshot -->
+            <div class="project-img-wrapper">
+              <img src="assets/images/hiretrue.png" alt="HireTrue - AI Proctoring Platform" class="project-img" loading="lazy">
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category-text">AI & Machine Learning</span>
+                <span class="project-separator">&bull;</span>
+                <span class="project-role">Computer Vision Pipeline</span>
+              </div>
+
+              <h3 class="project-title">HIRETRUE</h3>
+              <h4 class="project-tagline">Real-Time AI Proctoring & Candidate Verification Engine</h4>
+
+              <p class="project-description">
+                Built an automated integrity verification pipeline that performs continuous presence monitoring, 
+                edge-of-frame intrusion detection, and 3D facial orientation analysis in live video streams.
+              </p>
+
+              <!-- Technical Accomplishments -->
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Continuous candidate presence monitoring via video frame sampling</span>
+                </div>
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>3D facial landmark mesh calculation for yaw/pitch/roll tracking</span>
+                </div>
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Edge-of-frame perimeter analysis to detect secondary individuals</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Face Mesh</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Video Streams</span>
+              </div>
+
+              <!-- Actions -->
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm open-modal-btn" data-project-id="hiretrue">
+                  <i class="fa-solid fa-file-code"></i> Technical Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: EDUQUEUE -->
+          <div class="project-card card-panel" data-category="web" data-project="eduqueue">
+            <!-- Project Screenshot -->
+            <div class="project-img-wrapper">
+              <img src="assets/images/eduqueue.png" alt="EduQueue - Smart Queue Result Distribution" class="project-img" loading="lazy">
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category-text">Web & Distributed Systems</span>
+                <span class="project-separator">&bull;</span>
+                <span class="project-role">Multi-Tenant Platform</span>
+              </div>
+
+              <h3 class="project-title">EDUQUEUE</h3>
+              <h4 class="project-tagline">A Multi College Smart Queue Based Result Distribution Platform</h4>
+
+              <p class="project-description">
+                Implemented multi-tenant institutional administration pipelines featuring secure role-based access, 
+                automated CSV batch result processing, and dynamic SGPA/CGPA computation.
+              </p>
+
+              <!-- Technical Accomplishments -->
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Multi-tenant data partitioning across participating collegiate bodies</span>
+                </div>
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Automated ingestion and sanitization of high-volume result CSV spreadsheets</span>
+                </div>
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Dynamic algorithmic calculation of semester SGPA and cumulative CGPA</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tech-tags">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">SQL & MongoDB</span>
+                <span class="tech-tag">CSV Batch Processing</span>
+                <span class="tech-tag">RBAC Security</span>
+                <span class="tech-tag">Multi-Tenant</span>
+              </div>
+
+              <!-- Actions -->
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm open-modal-btn" data-project-id="eduqueue">
+                  <i class="fa-solid fa-file-code"></i> Technical Details
+                </button>
+                <button class="btn btn-outline btn-sm copy-project-summary" data-title="EDUQUEUE">
+                  <i class="fa-solid fa-copy"></i> Copy Summary
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: QUIZ APPLICATION -->
+          <div class="project-card card-panel" data-category="systems" data-project="quizapp">
+            <!-- Project Screenshot -->
+            <div class="project-img-wrapper">
+              <img src="assets/images/quizapp.png" alt="Quiz Application - Java Multithreaded" class="project-img" loading="lazy">
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category-text">High Concurrency & Systems</span>
+                <span class="project-separator">&bull;</span>
+                <span class="project-role">Core Systems Engine</span>
+              </div>
+
+              <h3 class="project-title">Quiz Application</h3>
+              <h4 class="project-tagline">Real-Time Assessment Engine with Multithreaded Countdown Timer</h4>
+
+              <p class="project-description">
+                Implemented a multithreaded real-time countdown timer engine to enforce per-question time constraints 
+                with automated auto-submission triggers.
+              </p>
+
+              <!-- Technical Accomplishments -->
+              <div class="project-features-list">
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Dedicated worker thread execution ensuring non-blocking countdown precision</span>
+                </div>
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>Deterministic auto-submission triggers executed at exactly 0.0 seconds</span>
+                </div>
+                <div class="p-feature-item">
+                  <i class="fa-solid fa-check text-blue"></i>
+                  <span>State isolation preventing client-side DOM latency from altering timers</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Badges -->
+              <div class="tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Multithreading</span>
+                <span class="tech-tag">Concurrency</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Event Dispatcher</span>
+              </div>
+
+              <!-- Actions -->
+              <div class="project-footer">
+                <button class="btn btn-primary btn-sm open-modal-btn" data-project-id="quizapp">
+                  <i class="fa-solid fa-file-code"></i> Technical Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SKILLS & TECHNOLOGIES ==================== -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Key Skills</span>
+          <h2 class="section-title">Technical Skills & <span class="gradient-text">Proficiencies</span></h2>
+          <p class="section-subtitle">
+            Languages, database engines, developer tooling, and analytical competencies applied across projects and coursework.
+          </p>
+        </div>
+
+        <!-- Live Skill Search Bar -->
+        <div class="skill-search-wrapper">
+          <div class="search-input-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="skillSearchInput" placeholder="Filter skills (e.g. Python, Java, SQL, C++, Git, MongoDB)...">
+            <button class="clear-search-btn" id="clearSkillSearch" title="Clear filter">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Skills Categories Grid -->
+        <div class="skills-categories-grid">
+
+          <!-- Category 1: Programming Languages -->
+          <div class="skill-category-card card-panel">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Programming Languages</h3>
+                <span class="category-count">7 Languages</span>
+              </div>
+            </div>
+
+            <div class="skill-chips-cloud">
+              <div class="skill-chip" data-skill-name="python programming scripting ai ml opencv">
+                <div class="chip-icon"><i class="fa-brands fa-python text-blue"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Python</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="java oop multithreading backend">
+                <div class="chip-icon"><i class="fa-brands fa-java text-red"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Java</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="javascript js es6 frontend web">
+                <div class="chip-icon"><i class="fa-brands fa-js text-yellow"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">JavaScript</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="c programming lowlevel pointers">
+                <div class="chip-icon"><i class="fa-solid fa-c"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">C</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="c++ cpp stl data structures algorithms">
+                <div class="chip-icon"><i class="fa-solid fa-code"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">C++</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="html css web frontend styling markup">
+                <div class="chip-icon"><i class="fa-brands fa-html5 text-orange"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">HTML & CSS</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Databases -->
+          <div class="skill-category-card card-panel">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Databases</h3>
+                <span class="category-count">Relational & NoSQL</span>
+              </div>
+            </div>
+
+            <div class="skill-chips-cloud">
+              <div class="skill-chip" data-skill-name="sql relational database queries mysql postgresql">
+                <div class="chip-icon"><i class="fa-solid fa-table text-blue"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">SQL (Relational Databases)</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="mongodb nosql document json collection">
+                <div class="chip-icon"><i class="fa-solid fa-leaf text-green"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">MongoDB (NoSQL)</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="schema design normalization indexing data modeling">
+                <div class="chip-icon"><i class="fa-solid fa-diagram-project text-blue"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Schema & Relational Modeling</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: Developer Tools -->
+          <div class="skill-category-card card-panel">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Developer Tools</h3>
+                <span class="category-count">Version Control & Environment</span>
+              </div>
+            </div>
+
+            <div class="skill-chips-cloud">
+              <div class="skill-chip" data-skill-name="git version control cli branches commits">
+                <div class="chip-icon"><i class="fa-brands fa-git-alt text-orange"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Git</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="github repositories pr pull requests collaboration">
+                <div class="chip-icon"><i class="fa-brands fa-github"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">GitHub</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="vs code visual studio code ide extensions debugging">
+                <div class="chip-icon"><i class="fa-solid fa-file-code text-blue"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">VS Code</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Soft Skills -->
+          <div class="skill-category-card card-panel">
+            <div class="category-header">
+              <div class="category-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+              <div>
+                <h3 class="category-title">Soft Skills</h3>
+                <span class="category-count">Analytical & Collaborative</span>
+              </div>
+            </div>
+
+            <div class="skill-chips-cloud">
+              <div class="skill-chip" data-skill-name="problem solving algorithmic reasoning debugging">
+                <div class="chip-icon"><i class="fa-solid fa-puzzle-piece text-blue"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Problem Solving</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 94%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="critical thinking analytical logic evaluation">
+                <div class="chip-icon"><i class="fa-solid fa-lightbulb text-yellow"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Critical Thinking</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="team work collaboration group projects peer review">
+                <div class="chip-icon"><i class="fa-solid fa-people-group text-green"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Team Work</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                </div>
+              </div>
+
+              <div class="skill-chip" data-skill-name="communication technical presentation documentation writing">
+                <div class="chip-icon"><i class="fa-solid fa-comments text-blue"></i></div>
+                <div class="chip-details">
+                  <span class="skill-title">Communication</span>
+                  <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== CERTIFICATIONS & INTERNSHIPS ==================== -->
+    <section class="section certs-section" id="certifications">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-certificate"></i> Specialized Training</span>
+          <h2 class="section-title">Certifications & <span class="gradient-text">Virtual Internships</span></h2>
+          <p class="section-subtitle">
+            10-week intensive specialized virtual internship programs completed across cybersecurity, generative AI, Android development, and professional skills.
+          </p>
+        </div>
+
+        <div class="certs-grid">
+
+          <!-- CERT 1: Palo Alto Cybersecurity -->
+          <div class="cert-card card-panel">
+            <div class="cert-header">
+              <div class="cert-logo-box">
+                <i class="fa-solid fa-shield-virus"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-provider">Palo Alto Networks</span>
+                <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> Completed 10/2024</span>
+              </div>
+            </div>
+
+            <h3 class="cert-name">Cybersecurity Virtual Internship</h3>
+            <p class="cert-desc">
+              10-week virtual internship covering network defense architectures, zero-trust security postures, threat intelligence analysis, and security operations fundamentals.
+            </p>
+
+            <div class="cert-tags">
+              <span class="cert-tag">Cybersecurity</span>
+              <span class="cert-tag">Network Defense</span>
+              <span class="cert-tag">10 Weeks</span>
+            </div>
+
+            <div class="cert-footer">
+              <span class="cert-verified"><i class="fa-solid fa-circle-check text-green"></i> Verified Credential</span>
+              <span class="cert-badge-code">PALO-OCT2024</span>
+            </div>
+          </div>
+
+          <!-- CERT 2: AWS Academy Gen-AI -->
+          <div class="cert-card card-panel">
+            <div class="cert-header">
+              <div class="cert-logo-box">
+                <i class="fa-brands fa-aws"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-provider">AWS Academy</span>
+                <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> Completed 10/2025</span>
+              </div>
+            </div>
+
+            <h3 class="cert-name">Gen-AI Virtual Internship</h3>
+            <p class="cert-desc">
+              10-week virtual internship program centered on generative AI fundamentals, foundation model concepts, prompt design, and AI workflow integration.
+            </p>
+
+            <div class="cert-tags">
+              <span class="cert-tag">Generative AI</span>
+              <span class="cert-tag">Foundation Models</span>
+              <span class="cert-tag">10 Weeks</span>
+            </div>
+
+            <div class="cert-footer">
+              <span class="cert-verified"><i class="fa-solid fa-circle-check text-green"></i> Verified Credential</span>
+              <span class="cert-badge-code">AWS-GENAI2025</span>
+            </div>
+          </div>
+
+          <!-- CERT 3: Google Android Developer -->
+          <div class="cert-card card-panel">
+            <div class="cert-header">
+              <div class="cert-logo-box">
+                <i class="fa-brands fa-android"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-provider">Google for Developers</span>
+                <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> Completed 04/2025</span>
+              </div>
+            </div>
+
+            <h3 class="cert-name">Android Developer Virtual Internship</h3>
+            <p class="cert-desc">
+              10-week practical engineering program covering Android SDK components, layout architecture, activity lifecycles, and reactive mobile interface patterns.
+            </p>
+
+            <div class="cert-tags">
+              <span class="cert-tag">Android Development</span>
+              <span class="cert-tag">Mobile Engineering</span>
+              <span class="cert-tag">10 Weeks</span>
+            </div>
+
+            <div class="cert-footer">
+              <span class="cert-verified"><i class="fa-solid fa-circle-check text-green"></i> Verified Credential</span>
+              <span class="cert-badge-code">GOOG-AND2025</span>
+            </div>
+          </div>
+
+          <!-- CERT 4: Wadhwani Employability -->
+          <div class="cert-card card-panel">
+            <div class="cert-header">
+              <div class="cert-logo-box">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-provider">Wadhwani Foundation</span>
+                <span class="cert-date"><i class="fa-regular fa-calendar-check"></i> Completed 01/2025</span>
+              </div>
+            </div>
+
+            <h3 class="cert-name">Employability Skill Job Ready Virtual Internship</h3>
+            <p class="cert-desc">
+              10-week intensive workplace preparedness curriculum targeting professional communication, collaborative team dynamics, and technical workplace problem solving.
+            </p>
+
+            <div class="cert-tags">
+              <span class="cert-tag">Job Readiness</span>
+              <span class="cert-tag">Professional Skills</span>
+              <span class="cert-tag">10 Weeks</span>
+            </div>
+
+            <div class="cert-footer">
+              <span class="cert-verified"><i class="fa-solid fa-circle-check text-green"></i> Verified Credential</span>
+              <span class="cert-badge-code">WADH-JOB2025</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== EDUCATION JOURNEY ==================== -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Pathway</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Academic Record</span></h2>
+          <p class="section-subtitle">
+            Consistent academic excellence spanning undergraduate engineering, intermediate MPC, and CBSE secondary school.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Education 1: B.Tech -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content card-panel">
+              <div class="content-header">
+                <div>
+                  <span class="timeline-badge current-badge">2024 &ndash; 2028 (Currently Enrolled)</span>
+                  <h3 class="timeline-title">Bachelor of Technology in Computer Science</h3>
+                  <h4 class="timeline-institution">
+                    <i class="fa-solid fa-building-columns"></i> Lendi Institute of Engineering and Technology
+                  </h4>
+                </div>
+                <div class="grade-pill grade-cgpa">
+                  <span class="grade-label">CGPA</span>
+                  <span class="grade-value">9.2</span>
+                </div>
+              </div>
+
+              <div class="timeline-details">
+                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Vizianagaram, Andhra Pradesh, India</span>
+                <p class="timeline-summary">
+                  Engaged in core computing coursework covering Data Structures & Algorithms, Object-Oriented Programming (Java & C++), 
+                  Database Management Systems, Computer Networks, and Operating Systems.
+                </p>
+              </div>
+
+              <div class="timeline-tags">
+                <span class="t-tag">B.Tech CSE</span>
+                <span class="t-tag">CGPA: 9.2</span>
+                <span class="t-tag">Vizianagaram</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education 2: Intermediate -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="timeline-content card-panel">
+              <div class="content-header">
+                <div>
+                  <span class="timeline-badge past-badge">Completed 2024</span>
+                  <h3 class="timeline-title">Intermediate Education (Class XI & XII)</h3>
+                  <h4 class="timeline-institution">
+                    <i class="fa-solid fa-building-columns"></i> Narayana Intermediate College
+                  </h4>
+                </div>
+                <div class="grade-pill grade-pct">
+                  <span class="grade-label">Score</span>
+                  <span class="grade-value">96.4%</span>
+                </div>
+              </div>
+
+              <div class="timeline-details">
+                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Visakhapatnam, Andhra Pradesh, India</span>
+                <p class="timeline-summary">
+                  Completed Mathematics, Physics, and Chemistry (MPC) stream with exceptional academic distinction, achieving 96.4% marks.
+                </p>
+              </div>
+
+              <div class="timeline-tags">
+                <span class="t-tag">MPC Stream</span>
+                <span class="t-tag">96.4% Distinction</span>
+                <span class="t-tag">Visakhapatnam</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education 3: Secondary CBSE -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <i class="fa-solid fa-school"></i>
+            </div>
+            <div class="timeline-content card-panel">
+              <div class="content-header">
+                <div>
+                  <span class="timeline-badge past-badge">Completed 2022</span>
+                  <h3 class="timeline-title">Secondary Education (CBSE Class X)</h3>
+                  <h4 class="timeline-institution">
+                    <i class="fa-solid fa-building-columns"></i> Narayana English Medium School
+                  </h4>
+                </div>
+                <div class="grade-pill grade-pct">
+                  <span class="grade-label">Score</span>
+                  <span class="grade-value">93.4%</span>
+                </div>
+              </div>
+
+              <div class="timeline-details">
+                <span class="timeline-loc"><i class="fa-solid fa-location-dot"></i> Visakhapatnam, Andhra Pradesh, India</span>
+                <p class="timeline-summary">
+                  Graduated from the Central Board of Secondary Education (CBSE) curriculum with high honors and 93.4% aggregate marks.
+                </p>
+              </div>
+
+              <div class="timeline-tags">
+                <span class="t-tag">CBSE Class X</span>
+                <span class="t-tag">93.4% Aggregate</span>
+                <span class="t-tag">Visakhapatnam</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-regular fa-envelope"></i> Contact Information</span>
+          <h2 class="section-title">Get in Touch with <span class="gradient-text">Sai Ganesh</span></h2>
+          <p class="section-subtitle">
+            Available for software engineering internships, technical collaborations, and academic evaluations.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left: Direct Contact Information Cards -->
+          <div class="contact-info-col">
+            
+            <div class="contact-card card-panel">
+              <div class="c-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="c-details">
+                <span class="c-label">Direct Email</span>
+                <a href="mailto:saiganesh.korada44@gmail.com" class="c-val">saiganesh.korada44@gmail.com</a>
+              </div>
+              <button class="c-copy-btn" data-copy="saiganesh.korada44@gmail.com" title="Copy Email">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card card-panel">
+              <div class="c-icon">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="c-details">
+                <span class="c-label">Phone</span>
+                <a href="tel:9441912178" class="c-val">+91 9441912178</a>
+              </div>
+              <button class="c-copy-btn" data-copy="9441912178" title="Copy Phone Number">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="contact-card card-panel">
+              <div class="c-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="c-details">
+                <span class="c-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/sai-ganesh-b73193356" target="_blank" rel="noopener noreferrer" class="c-val">linkedin.com/in/sai-ganesh-b73193356</a>
+              </div>
+              <a href="https://linkedin.com/in/sai-ganesh-b73193356" target="_blank" rel="noopener noreferrer" class="c-ext-btn" title="Open LinkedIn Profile">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <div class="contact-card card-panel">
+              <div class="c-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="c-details">
+                <span class="c-label">Location</span>
+                <span class="c-val">Visakhapatnam, Andhra Pradesh, India</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Clean Contact Form -->
+          <div class="contact-form-col">
+            <div class="form-container card-panel">
+              <div class="form-header">
+                <h3 class="form-heading"><i class="fa-solid fa-paper-plane text-blue"></i> Send a Direct Message</h3>
+                <p class="form-desc">Leave a note regarding opportunities, technical questions, or lab evaluations.</p>
+              </div>
+
+              <form id="contactForm" class="contact-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="userName">Full Name <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="fa-regular fa-user"></i>
+                      <input type="text" id="userName" name="name" placeholder="Prof. / Evaluator Name" required>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="userEmail">Email Address <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="fa-regular fa-envelope"></i>
+                      <input type="email" id="userEmail" name="email" placeholder="evaluator@institution.edu" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="userSubject">Subject <span class="req">*</span></label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-tag"></i>
+                    <input type="text" id="userSubject" name="subject" placeholder="Lab Portfolio Review / Internship Inquiry" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="userMessage">Message <span class="req">*</span></label>
+                  <div class="input-wrap textarea-wrap">
+                    <textarea id="userMessage" name="message" rows="4" placeholder="Enter your message here..." required></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100" id="formSubmitBtn">
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand-wrap">
+        <a href="#hero" class="footer-logo">
+          <span class="logo-box">&lt;/&gt;</span>
+          <span class="footer-logo-title">Engineering Portfolio</span>
+        </a>
+        <div class="footer-affiliation">
+          <span>Department of Computer Science and Engineering</span>
+          <span class="footer-affiliation-sub">Lendi Institute of Engineering and Technology</span>
+        </div>
+      </div>
+
+      <nav class="footer-nav-inline" aria-label="Footer Quick Links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="footer-connect">
+        <a href="https://linkedin.com/in/sai-ganesh-b73193356" target="_blank" rel="noopener noreferrer" class="footer-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:saiganesh.korada44@gmail.com" class="footer-icon-btn" aria-label="Send Email" title="Send Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="tel:9441912178" class="footer-icon-btn" aria-label="Call Phone" title="Phone">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom-bar">
+      <div class="footer-copyright">
+        &copy; <span id="currentYear">2026</span> Korada Sai Ganesh. Academic &amp; Engineering Portfolio.
+      </div>
+      <div class="footer-academic-meta">
+        <span class="status-indicator-dot"></span> B.Tech CSE &bull; Class of 2028
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+  <!-- ==================== PROJECT DETAILS MODAL (TECHNICAL SPEC SHEET) ==================== -->
+  <div class="modal-backdrop" id="projectModalBackdrop">
+    <div class="modal-dialog card-panel" id="projectModal">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-badge-group">
+          <span class="modal-cat-pill" id="modalCategoryPill">AI System</span>
+          <span class="modal-status-pill" id="modalStatusPill">Production Architecture</span>
+        </div>
+        <h2 class="modal-title" id="modalTitle">HIRETRUE</h2>
+        <h4 class="modal-tagline" id="modalTagline">Real-Time AI Proctoring & Candidate Verification Engine</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4 class="modal-heading"><i class="fa-solid fa-sitemap text-blue"></i> System Architecture & Pipeline Overview</h4>
+          <p class="modal-text" id="modalOverview"></p>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-heading"><i class="fa-solid fa-shield-halved text-blue"></i> Technical Implementation Highlights</h4>
+          <ul class="modal-bullets-list" id="modalBullets"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-heading"><i class="fa-solid fa-code text-blue"></i> Core Technologies</h4>
+          <div class="tech-tags" id="modalTechTags"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" id="modalDismissBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== RESUME VIEW / PRINT MODAL ==================== -->
+  <div class="modal-backdrop" id="resumeModalBackdrop">
+    <div class="resume-modal-dialog" id="resumeModal">
+      <div class="resume-modal-topbar">
+        <div class="resume-topbar-title">
+          <i class="fa-solid fa-file-lines text-blue"></i>
+          <span>Official Resume Sheet &bull; Korada Sai Ganesh</span>
+        </div>
+        <div class="resume-topbar-actions">
+          <button class="btn btn-sm btn-primary" id="printResumeBtn">
+            <i class="fa-solid fa-print"></i> Print / Save as PDF
+          </button>
+          <button class="modal-close" id="resumeCloseBtn" aria-label="Close resume view">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Printable Resume Sheet Layout -->
+      <div class="resume-paper" id="resumePrintableArea">
+        <div class="resume-header">
+          <h1 class="r-name">KORADA SAI GANESH</h1>
+          <div class="r-contacts">
+            <span><i class="fa-solid fa-envelope"></i> saiganesh.korada44@gmail.com</span>
+            <span><i class="fa-solid fa-phone"></i> +91 9441912178</span>
+            <span><i class="fa-solid fa-location-dot"></i> Visakhapatnam, India</span>
+            <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/sai-ganesh-b73193356</span>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <h2 class="r-heading">SUMMARY</h2>
+          <div class="r-divider"></div>
+          <p class="r-summary">
+            Motivated and enthusiastic Computer Science Engineering student with a strong interest in programming, 
+            problem-solving, and emerging technologies. Eager to learn new technologies and contribute effectively 
+            to software development projects.
+          </p>
+        </div>
+
+        <div class="r-section">
+          <h2 class="r-heading">EDUCATION</h2>
+          <div class="r-divider"></div>
+          <div class="r-item">
+            <div class="r-item-head">
+              <strong>Bachelor of Technology in Computer Science</strong>
+              <span class="r-year">2028</span>
+            </div>
+            <div class="r-item-sub">
+              <span>Lendi Institute of Engineering and Technology</span>
+              <span>Vizianagaram, India</span>
+            </div>
+            <div class="r-item-meta"><strong>CGPA: 9.2</strong></div>
+          </div>
+
+          <div class="r-item mt-2">
+            <div class="r-item-head">
+              <strong>Intermediate Education</strong>
+              <span class="r-year">2024</span>
+            </div>
+            <div class="r-item-sub">
+              <span>Narayana Intermediate College</span>
+              <span>Visakhapatnam</span>
+            </div>
+            <div class="r-item-meta"><strong>Percentage: 96.4%</strong></div>
+          </div>
+
+          <div class="r-item mt-2">
+            <div class="r-item-head">
+              <strong>Secondary Education (CBSE)</strong>
+              <span class="r-year">2022</span>
+            </div>
+            <div class="r-item-sub">
+              <span>Narayana English Medium School</span>
+              <span>Visakhapatnam, India</span>
+            </div>
+            <div class="r-item-meta"><strong>Percentage: 93.4%</strong></div>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <h2 class="r-heading">KEY SKILLS</h2>
+          <div class="r-divider"></div>
+          <div class="r-skill-row"><strong>Programming Languages:</strong> HTML, CSS, JavaScript, Java, C, C++, Python</div>
+          <div class="r-skill-row"><strong>Databases:</strong> SQL, MongoDB</div>
+          <div class="r-skill-row"><strong>Developer Tools:</strong> Git and github, VS code</div>
+          <div class="r-skill-row"><strong>Soft Skills:</strong> Communication, Critical Thinking, Team Work and Problem Solving</div>
+          <div class="r-skill-row"><strong>Languages:</strong> English, Telugu</div>
+        </div>
+
+        <div class="r-section">
+          <h2 class="r-heading">CERTIFICATIONS</h2>
+          <div class="r-divider"></div>
+          <div class="r-grid-2">
+            <div class="r-cert-box">
+              <strong>Cybersecurity Virtual Internship</strong>
+              <div class="r-cert-sub">Palo Alto (10-week virtual internship completed in 10/2024)</div>
+            </div>
+            <div class="r-cert-box">
+              <strong>Gen-AI Virtual Internship</strong>
+              <div class="r-cert-sub">AWS Academy (10-week virtual internship completed in 10/2025)</div>
+            </div>
+            <div class="r-cert-box">
+              <strong>Android Developer Virtual Internship</strong>
+              <div class="r-cert-sub">Google for Developers (10-week virtual internship completed in 04/2025)</div>
+            </div>
+            <div class="r-cert-box">
+              <strong>Employability Skill Job Ready Virtual Internship</strong>
+              <div class="r-cert-sub">Wadhwani (10-week virtual internship completed in 01/2025)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-section">
+          <h2 class="r-heading">PROJECTS</h2>
+          <div class="r-divider"></div>
+          
+          <div class="r-project">
+            <div class="r-p-title"><strong>HIRETRUE</strong> - Real-Time AI Proctoring & Candidate Verification Engine</div>
+            <ul class="r-bullets">
+              <li>Built an automated integrity verification pipeline that performs continuous presence monitoring, edge-of-frame intrusion detection, and 3D facial orientation analysis in live video streams.</li>
+            </ul>
+          </div>
+
+          <div class="r-project mt-2">
+            <div class="r-p-title"><strong>EDUQUEUE</strong> - A Multi College Smart Queue Based Result Distribution Platform</div>
+            <ul class="r-bullets">
+              <li>Implemented multi-tenant institutional administration pipelines featuring secure role-based access, automated CSV batch result processing, and dynamic SGPA/CGPA computation.</li>
+            </ul>
+          </div>
+
+          <div class="r-project mt-2">
+            <div class="r-p-title"><strong>Quiz Application</strong></div>
+            <ul class="r-bullets">
+              <li>Implemented a multithreaded real-time countdown timer engine to enforce per-question time constraints with automated auto-submission triggers.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript Files -->
+  <script src="js/particles.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
